@@ -9,6 +9,6 @@ WORKDIR /code
 
 COPY Pipfile Pipfile.lock ./
 
-RUN pip install --no-cache-dir pipenv && pipenv install --system --deploy
+RUN pip install --no-cache-dir pipenv && pipenv install --dev --system --deploy
 
 ENTRYPOINT ["tail", "-f", "/dev/null"]
