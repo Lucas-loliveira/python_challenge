@@ -5,10 +5,13 @@ name = "pypi"
 
 [packages]
 pytest-mock = "*"
+requests = "*"
+requests-cache = "*"
 
 [dev-packages]
 pytest = "*"
 pytest-mock = "*"
+requests-mock = "*"
 
 [requires]
 python_version = "3.8"
