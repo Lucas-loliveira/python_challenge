@@ -4,14 +4,14 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-pytest-mock = "*"
 requests = "*"
 requests-cache = "*"
+redis = "*"
 
 [dev-packages]
 pytest = "*"
-pytest-mock = "*"
 requests-mock = "*"
+pytest-mock = "*"
 
 [requires]
 python_version = "3.8"
