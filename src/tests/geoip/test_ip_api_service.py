@@ -29,7 +29,7 @@ def test_get_geoip_batch_400_code(mock_post_cache):
     ip_api = IpApiClient()
     result = ip_api.get_geoip_batch(ID_LIST)
     assert result["success"] == False
-    assert result["error"] == f"ip api return a {mock_response.status_code} status code"
+    assert result["error"] == f"{mock_response.status_code} status code"
 
 @mock.patch("services.base_requests.BaseClient.request_post_with_cache")
 def test_get_geoip_batch_time_out(mock_post_cache):

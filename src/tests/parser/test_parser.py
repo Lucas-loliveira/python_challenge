@@ -1,5 +1,5 @@
 import pytest
-from src.parser.parser_service import Parcer
+from parser.parser_service import Parcer
 from .fixtures import mocker_ip_raw_file, EXPECTED_DATA
 
 def test_parcer_success(mocker_ip_raw_file):

@@ -28,6 +28,7 @@ class GeoIP:
         try:
             with open(file_path, 'a') as file:  
                 file.write(str(data))
+                file.write('\n')
             file.close()
             return {"success": True}
         except FileNotFoundError as e:

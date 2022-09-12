@@ -20,7 +20,7 @@ class IpApiClient:
         response = self.base_client.request_post_with_cache(url=self.batch_url,data=ip_list, ttl=IP_API_CACHE_TTL)
 
         if response.status_code != 200:
-            return {"success": False, "error": f"ip api return a {response.status_code} status code"}
+            return {"success": False, "error": f"{response.status_code} status code"}
 
         if(int(response.headers.get('X-Rl',1)) == 0 and not response.from_cache):
             self.time_out = int(response.headers.get('X-Ttl',1)) + 1

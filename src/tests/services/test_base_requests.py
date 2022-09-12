@@ -2,7 +2,7 @@ from time import sleep
 import pytest
 from requests.models import Response
 from requests.exceptions import ConnectionError
-from src.services.base_requests import BaseClient
+from services.base_requests import BaseClient
 
 
 def test_cache_get(requests_mock_get):
