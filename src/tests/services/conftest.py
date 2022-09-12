@@ -11,3 +11,8 @@ def clear_cache():
 @pytest.fixture()
 def requests_mock_get(requests_mock):
     return requests_mock.get('https://test-cache.io', text='cached response')
+
+
+@pytest.fixture()
+def requests_mock_post(requests_mock):
+    return requests_mock.post('https://test-cache.io', text='cached response')
