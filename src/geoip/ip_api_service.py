@@ -24,7 +24,14 @@ class IpApiClient:
 
         if(int(response.headers.get('X-Rl',1)) == 0 and not response.from_cache):
             self.time_out = int(response.headers.get('X-Ttl',1)) + 1
-
+        print({
+            "service": "groip",
+            "status": response.status_code,
+            "self.time_out": self.time_out,
+            "X-Ttl": int(response.headers.get('X-Ttl',1)),
+            "X-Rl": int(response.headers.get('X-Rl',1)),
+            "response_cache_hit": response.from_cache
+	        })
         return {"success": True, "data": response.json()}
             
     def take_time_out(self) -> bool:
@@ -32,6 +39,7 @@ class IpApiClient:
             return False
 
         if self.time_out > 0:
+            print(f"ip request need to take a timeout of {self.time_out} seconds")
             sleep(self.time_out)
             self.time_out = 0
         return True

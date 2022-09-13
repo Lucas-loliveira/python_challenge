@@ -9,7 +9,8 @@ class RADP:
 
     def process_rdap(self, result_file:str)-> dict:
 
-        for ip in self.ip_list:
+        for index,ip in enumerate(self.ip_list):
+            print(f"rdap: processing {index+1}/{len(self.ip_list)} ip")
             response = self.rdap_client.get_rdap_from_ip(ip)
             write_result = self.write_result_file(result_file, response)
             if not write_result["success"]:

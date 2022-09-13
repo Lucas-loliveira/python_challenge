@@ -1,21 +1,26 @@
-import asyncio
 
+from time import sleep
 from parser.parser_service import Parcer
-from geoip.geoip_service import GeoIP
-from rdap.rdap_service import RADP
+from tasks import rdap_task, geoip_task, app
+from random import randint
+
+RAW_DATA_PATH = "raw_data/list_of_ips.txt"
+RESULT_GEOIP_PATH = f"../result_data/result_geoip_{randint(1,99999)}.txt"
+RESULT_RDAP_PATH = f"../result_data/result_rdap_{randint(1,99999)}.txt"
 
 
 def main():
     p = Parcer()
-    result_parcer = p.extract_ips_from_file("raw_data/list_of_ips.txt")
+    result_parcer = p.extract_ips_from_file(RAW_DATA_PATH)
 
     if result_parcer["success"]:
-            
-        geoip = GeoIP(result_parcer["data"])
-        print(geoip.process_geoip(result_file="result_data/result_geoip_example.txt"))
-
-
-        rdap = RADP(result_parcer["data"])
-        print(rdap.process_rdap(result_file="result_data/result_rdap_example.txt"))
+        geoip_task.delay(result_parcer["data"], RESULT_GEOIP_PATH)
+        rdap_task.delay(result_parcer["data"], RESULT_RDAP_PATH)
     else:
         print(result_parcer)
+
+    print(f"results of geoip search can be seen in {RESULT_GEOIP_PATH}")
+    print(f"results of rdap search can be seen in {RESULT_RDAP_PATH}")
+
+if __name__ == "__main__":
+    main()
