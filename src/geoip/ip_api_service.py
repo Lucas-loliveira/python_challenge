@@ -25,7 +25,7 @@ class IpApiClient:
         if(int(response.headers.get('X-Rl',1)) == 0 and not response.from_cache):
             self.time_out = int(response.headers.get('X-Ttl',1)) + 1
         print({
-            "service": "groip",
+            "service": "geoip",
             "status": response.status_code,
             "self.time_out": self.time_out,
             "X-Ttl": int(response.headers.get('X-Ttl',1)),

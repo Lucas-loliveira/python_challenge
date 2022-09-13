@@ -24,7 +24,7 @@ class GeoIP:
         for ndx in range(0, self.len_ip_list, batch_size):
             yield self.ip_list[ndx:min(ndx + batch_size, self.len_ip_list)]
     
-    def write_result_file(self, file_path:str, data:str) -> None:
+    def write_result_file(self, file_path:str, data:str) -> dict:
         try:
             with open(file_path, 'a') as file:  
                 file.write(str(data))

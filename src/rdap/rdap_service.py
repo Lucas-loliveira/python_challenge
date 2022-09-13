@@ -18,7 +18,7 @@ class RADP:
         return {"success": True, "data":result_file}
 
 
-    def write_result_file(self, file_path:str, data:str) -> None:
+    def write_result_file(self, file_path:str, data:str) -> dict:
         try:
             with open(file_path, 'a') as file:  
                 file.write(str(data))

@@ -7,7 +7,7 @@ class RDAPApiClient:
         self.base_client = BaseClient()
         self.url = RDAP_API_URL
 
-    def get_rdap_from_ip(self, ip):
+    def get_rdap_from_ip(self, ip:str) -> dict:
         response = self.base_client.request_get(url=self.url+ip,ttl=RDAP_API_CACHE_TTL)
         print({
             "service": "rdap",
