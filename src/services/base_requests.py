@@ -9,7 +9,7 @@ from requests.models import Response
 class BaseClient:
 
     def _get_cached_session(self, token:str)->requests_cache.CachedSession:
-        backend = requests_cache.RedisCache(host=REDIS_HOST, port=REDIS_PORT,password=REDIS_PASSWORD)
+        backend = requests_cache.RedisCache(host=REDIS_HOST, port=REDIS_PORT)
         session = requests_cache.CachedSession('client_cache',backend, allowable_methods=('GET', 'HEAD', 'POST'))
         session.headers.update({
             'Content-Type': 'application/json',
