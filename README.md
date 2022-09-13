@@ -1,7 +1,9 @@
-# python-challenge: Geo IP and RDAP lookups
+python-challenge: Geo IP and RDAP lookups
+=================
 Author: Lucas da Silva de Oliveira (lucasoliveira783@gmail.com, https://www.linkedin.com/in/lucas-sil-oliveira)
 
-## Objective
+Objective
+=================
 Create a program in Python that will read a given set of IPs, perform Geo IP and RDAP lookups, and return the data back to the user.
 
 Main technologies used:
@@ -34,7 +36,7 @@ Requirements
 How to run the app
 ============
 
-run the containers and celery app
+### Run the containers and celery app
 ```bash
 $ make build up celery
 ```
@@ -44,14 +46,14 @@ Expected result:
 
 Keep the last terminal open. 
 
-Open a new terminal to execute the script that will perform Geo IP and RDAP lookups: 
+### Open a new terminal to execute the script that will perform Geo IP and RDAP lookups: 
 ```bash
 $ make script
 ```
 expected result: 
 ![image](https://user-images.githubusercontent.com/22778168/189963483-b182b035-c256-473e-94ac-4c1c5deeb835.png)
 
-If you open the fist terminal, the terminal that is running the celery app you will start do see the logs of GEOIP and RDAP lookups:
+If you open the first terminal, the terminal that is running the celery app, you will start do see the logs of GEOIP and RDAP lookups:
 
 ![image](https://user-images.githubusercontent.com/22778168/189963519-876478ad-540c-4c08-a03c-96a108f1a34b.png)
 
@@ -64,7 +66,7 @@ Examples of the execution result can be seen in [result_data/result_geoip_exampl
 
 
 
-Stops containers and removes containers, networks, volumes, and images created: 
+### Stops containers and removes containers, networks, volumes, and images created: 
 
 ```bash
 $ make down
