@@ -2,7 +2,7 @@
 import re
 
 
-class Parcer:
+class Parser:
 
     def extract_ips_from_file(self, file_path: str) -> dict:
         ip_list=[]

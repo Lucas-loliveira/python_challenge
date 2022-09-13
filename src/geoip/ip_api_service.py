@@ -1,10 +1,15 @@
 from time import sleep
 from services.base_requests import BaseClient
-from .constants import *
+from .constants import IP_API_URL, IP_API_LIMIT_SIZE,IP_API_TIMEOUT_LIMIT,IP_API_CACHE_TTL
 
 
 class IpApiClient:
-
+    '''The batch function allows 15 requests per minute.
+        that's why it was necessary to implement the take_time_out method, 
+        which waits for the ttl from the request when the number of remaining requests (X-Rl)
+        see more in "Usage limits" in  https://ip-api.com/docs/api:batch
+         reaches zero
+    '''
     def __init__(self) -> None:
         self.base_client = BaseClient()
         self.batch_url = IP_API_URL

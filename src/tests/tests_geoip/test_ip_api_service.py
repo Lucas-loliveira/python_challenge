@@ -1,8 +1,8 @@
 from unittest import mock
 from unittest.mock import MagicMock
 from geoip.ip_api_service import IpApiClient
-from .conftest import *
-from geoip.constants import *
+from .conftest import ID_LIST, GEOIP_DATA
+from geoip.constants import IP_API_TIMEOUT_LIMIT, IP_API_LIMIT_SIZE
 
 
 @mock.patch("services.base_requests.BaseClient.request_post_with_cache")

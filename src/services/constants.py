@@ -1,4 +1,3 @@
 REDIS_HOST = 'cache'
 REDIS_PORT = 6379
-
 TLL_DEFAULT = 5

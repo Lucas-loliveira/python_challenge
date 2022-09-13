@@ -1,6 +1,6 @@
 from services.base_requests import BaseClient
 
-from .constants import *
+from .constants import RDAP_API_URL, RDAP_API_CACHE_TTL
 
 class RDAPApiClient:
     def __init__(self) -> None:

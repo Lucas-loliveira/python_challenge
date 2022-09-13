@@ -1,6 +1,6 @@
 from unittest import mock
 from geoip.geoip_service import GeoIP
-from .conftest import *
+from .conftest import ID_LIST, GEOIP_DATA
 
 
 @mock.patch("geoip.geoip_service.GeoIP.write_result_file", return_value={"success": True})

@@ -38,7 +38,7 @@ run the containers and celery app
 ```bash
 $ make build up celery
 ```
-expected result: 
+Expected result: 
 ![image](https://user-images.githubusercontent.com/22778168/189963428-b0a44549-5693-4b7e-a541-4e1dd55ef437.png)
 
 
@@ -103,7 +103,8 @@ Unfortunately I didn't find any free api that provided a batch function like I f
 Future improvements
 =====
   * Perform multiple asynchronous requests to the RDAP service to improve its performance
-  * Logs
+  * Replace prints with logs
   * CI
   * CD
+  * Different environment variables for dev and production environments
 

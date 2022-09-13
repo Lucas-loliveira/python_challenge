@@ -1,6 +1,6 @@
 
 from time import sleep
-from parser.parser_service import Parcer
+from parser.parser_service import Parser
 from tasks import rdap_task, geoip_task, app
 from random import randint
 
@@ -10,8 +10,8 @@ RESULT_RDAP_PATH = f"../result_data/result_rdap_{randint(1,99999)}.txt"
 
 
 def main():
-    p = Parcer()
-    result_parcer = p.extract_ips_from_file(RAW_DATA_PATH)
+    parser = Parser()
+    result_parcer = parser.extract_ips_from_file(RAW_DATA_PATH)
 
     if result_parcer["success"]:
         geoip_task.delay(result_parcer["data"], RESULT_GEOIP_PATH)

@@ -1,7 +1,7 @@
 import requests_cache
 import json
 
-from .constants import *
+from .constants import REDIS_HOST, REDIS_PORT, TLL_DEFAULT
 from requests.exceptions import ConnectionError
 from requests.models import Response
 

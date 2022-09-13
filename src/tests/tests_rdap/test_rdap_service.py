@@ -1,6 +1,6 @@
 from unittest import mock
 from rdap.rdap_service import RADP
-from .conftest import *
+from .conftest import ID_LIST, RDAP_DATA
 
 
 
